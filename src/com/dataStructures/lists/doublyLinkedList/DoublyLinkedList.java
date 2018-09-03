@@ -1,8 +1,8 @@
-package com.dataStructures.lists.linkedList;
+package com.dataStructures.lists.doublyLinkedList;
 
 import java.util.ArrayList;
 
-public class LinkedList {
+public class DoublyLinkedList {
 	
 	Node head;
 	Node tail;
@@ -21,6 +21,7 @@ public class LinkedList {
 		else {
 			Node oldHead = head;
 			newFrontNode.next = oldHead;
+			oldHead.previous = newFrontNode;
 			head = newFrontNode;
 		}
 		
@@ -34,6 +35,7 @@ public class LinkedList {
 		else {
 			Node oldTail = tail;
 			oldTail.next = newEndNode;
+			newEndNode.previous = oldTail;
 			head = newEndNode;
 		}
 		
@@ -43,20 +45,18 @@ public class LinkedList {
 	public void removeFromFront() {
 		if(count>0) {
 			head = head.next;
+			head.previous = null;
 			count--;	
 		}
+
 	}
 	
 	public void removeFromEnd() {
 		if(count>0) {
-			Node temp = head;
-			while(temp.next.next != null) {
-			  
-				temp = temp.next;
-			}
-			tail = temp;
-			count--;	
+			tail.previous.next = null;
+			count--;
 		}
+
 	}
 	
 	public Node[] enumerateAsArray(){
@@ -83,28 +83,28 @@ public class LinkedList {
 	}
 	
 	public static void main(String args[]) {
-		LinkedList newLinkedList = new LinkedList();
+		DoublyLinkedList newDoublyLinkedList = new DoublyLinkedList();
 		
-		newLinkedList.addToFront(new Node(1));
-		newLinkedList.addToFront(new Node(2));
-		newLinkedList.addToFront(new Node(3));
-		newLinkedList.addToFront(new Node(4));
-		newLinkedList.addToFront(new Node(5));
+		newDoublyLinkedList.addToFront(new Node(1));
+		newDoublyLinkedList.addToFront(new Node(2));
+		newDoublyLinkedList.addToFront(new Node(3));
+		newDoublyLinkedList.addToFront(new Node(4));
+		newDoublyLinkedList.addToFront(new Node(5));
 		
-		newLinkedList.printyy(newLinkedList);
-		newLinkedList.removeFromEnd();
-		newLinkedList.printyy(newLinkedList);
+		newDoublyLinkedList.printyy(newDoublyLinkedList);
+		newDoublyLinkedList.removeFromEnd();
+		newDoublyLinkedList.printyy(newDoublyLinkedList);
 		
 		
-		newLinkedList.removeFromFront();
+		newDoublyLinkedList.removeFromFront();
 		
-		System.out.println(newLinkedList.toString());
+		System.out.println(newDoublyLinkedList.toString());
 		
 	}
 	
 	
-	public void printyy(LinkedList newLinkedList) {
-		Node[] nodeList = newLinkedList.enumerateAsArray();
+	public void printyy(DoublyLinkedList newDoublyLinkedList) {
+		Node[] nodeList = newDoublyLinkedList.enumerateAsArray();
 		StringBuilder allNodes = new StringBuilder();
 		for(int i=0; i< nodeList.length ;i++) {
 			allNodes.append(nodeList[i] + " ");
