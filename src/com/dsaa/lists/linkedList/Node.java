@@ -1,10 +1,9 @@
-package com.dataStructures.lists.doublyLinkedList;
+package com.dsaa.lists.linkedList;
 
 public class Node {
 	
 	int value = 0;
 	Node next = null;
-	Node previous = null;
 	
 	public Node(int value) {
 		this.value = value;
