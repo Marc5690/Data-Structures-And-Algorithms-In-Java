@@ -73,14 +73,10 @@ public class Queue {
 		int newTailIndex = 0;
 
 		for(int i = queueOfNodesHeadIndex; i < queueOfNodesTailIndex;i++, newArrayIndex++) {
-			/*System.out.println("Index: " + i + " newArrayVal: " + 
-		newArray[newArrayIndex] + " oldArrayVal: " + oldCopy[i]);*/
 			newArray[newArrayIndex] = oldCopy[i];	
 		}
 
 		for(int i = queueOfNodesTailIndex; i < queueOfNodes.length;i++, newArrayIndex++) {
-			/*System.out.println("Index: " + i + " newArrayVal: " + 
-		newArray[newArrayIndex] + " oldArrayVal: " + oldCopy[i]);*/
 			newArray[newArrayIndex] = oldCopy[i];
 			newTailIndex = newArrayIndex;
 		}
@@ -120,21 +116,6 @@ public class Queue {
 
 	public static void main(String[] args) {
 		Queue testQueue = new Queue();
-		//System.out.println(testQueue.queueOfNodes.length);
-
-
-		/*
-		testQueue.copyArrayAndResize();
-
-		System.out.println("Copied and resized");
-
-		for(int i = 0 ; i < size; i++) {
-			System.out.println(testQueue.queueOfNodes[i]);
-		}
-
-
-		System.out.println("Head index: " + testQueue.queueOfNodesHeadIndex);
-		System.out.println("Tail index: " + testQueue.queueOfNodesTailIndex);*/
 
 		testQueue.enQueue(new Integer(1));
 		testQueue.enQueue(new Integer(2));
@@ -162,7 +143,6 @@ public class Queue {
 		testQueue.enQueue(new Integer(14));
 
 		testQueue.deQueue();
-
 
 		testQueue.deQueue();
 		testQueue.deQueue();

@@ -27,11 +27,8 @@ public class Stack<T> {
 	}
 	
 	public T pop() {
-		//if(!listOfNodes.isEmpty()) {
-			count--;
-			return listOfNodes.removeFirst();
-	//	}
-	//	return new Exception();
+		count--;
+		return listOfNodes.removeFirst();
 	}
 	
 	public void clear() {

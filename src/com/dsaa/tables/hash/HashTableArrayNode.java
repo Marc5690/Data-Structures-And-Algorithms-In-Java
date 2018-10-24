@@ -1,6 +1,6 @@
 package com.dsaa.tables.hash;
 
-public class HashTableArrayNode {
+public class HashTableArrayNode{
 	
 	private String value;
 
@@ -22,7 +22,7 @@ public class HashTableArrayNode {
 		for(char c : value.toCharArray()) {
 		    valueHash += c;
 		}
-		return boundary % valueHash;
+		return (boundary - 1) % valueHash;
 		
 	}
 	

@@ -194,18 +194,13 @@ public class BinaryTree {
 	public static void main(String[] args) {
 		BinaryTree bt = new BinaryTree();
 		
-
 		//Stack intead of recursion when traversing, because recursion could cause stack
 		//overflow errors in production
-		//From pluralsight
 		bt.addNode(new BinaryTreeNode(4));
 		bt.addNode(new BinaryTreeNode(2));
 		bt.addNode(new BinaryTreeNode(1));
 		bt.addNode(new BinaryTreeNode(6));
 		bt.addNode(new BinaryTreeNode(7));
-//		bt.addNode(new BinaryTreeNode(4));
-		
-	//	bt.findNode(new BinaryTreeNode(7));
 		bt.addNode(new BinaryTreeNode(3));
 		bt.addNode(new BinaryTreeNode(5));
 		
@@ -220,6 +215,7 @@ public class BinaryTree {
 		bt.addNode(new BinaryTreeNode(6));
 		bt.addNode(new BinaryTreeNode(7));
 		bt.addNode(new BinaryTreeNode(8));*/
+		
 	}
 	
 	

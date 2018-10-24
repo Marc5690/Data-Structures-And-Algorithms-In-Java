@@ -35,6 +35,8 @@ public class PostFixCalculator {
 					e.printStackTrace();
 				}
 			}
+			
+			characterTypeCheck.close();
 		}
 		
 		return argumentsStack;
@@ -55,15 +57,11 @@ public class PostFixCalculator {
 			}
 
 		System.out.println("Done");
-		
 	}
 	
 	public Integer calculateOperation(String operator, Integer firstOperand, Integer secondOperand) throws Exception{
 		
 		Integer result = null;
-		
-	
-			
 		
 		  switch(operator) {
     	  case "+":
