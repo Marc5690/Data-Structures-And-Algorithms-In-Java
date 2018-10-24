@@ -1,5 +1,7 @@
 package com.dsaa.binaryTree;
 
+import java.util.Stack;
+
 public class BinaryTree {
 	
 	
@@ -28,6 +30,39 @@ public class BinaryTree {
         return foundValue;
 				 
 	}
+	
+	//This is an additional example of in order traversal that uses a stack to avoid runtime out-of-memory exceptions
+	public void InOrderStackTraversal() {
+		
+        if (rootNode != null) {
+
+            Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
+            BinaryTreeNode current = rootNode;
+            boolean goLeftNext = true;
+
+            stack.push(current);
+
+            while (stack.size() > 0) {
+                if (goLeftNext) {
+                    while (current.left != null) {
+                        stack.push(current);
+                        current = current.left;
+                    }
+                }
+
+                System.out.println(current.value);
+
+                if (current.right != null) {
+                    current = current.right;
+                    goLeftNext = true;
+                }
+                else {
+                    current = stack.pop();
+                    goLeftNext = false;
+                }
+            }
+        }
+    }
 	
 	//Finding data with in-order traversal
 	public BinaryTreeNode findNodeInOrder(BinaryTreeNode valueToCompare, BinaryTreeNode valueToFind) {
@@ -130,11 +165,6 @@ public class BinaryTree {
 	        	}
 	        	else {
 	        		BinaryTreeNode newLeft = currentValue.left;
-	        		
-	        		//test before uploading
-	        		/*while(newLeft.left != null) {
-	        			newLeft = newLeft.left;	
-	        		}*/
 	        		BinaryTreeNode newRight = currentValue.right;
 	        		BinaryTreeNode movedNode = currentValue.right.left;
 	        		movedNode.right = newRight;
@@ -204,6 +234,7 @@ public class BinaryTree {
 		bt.addNode(new BinaryTreeNode(3));
 		bt.addNode(new BinaryTreeNode(5));
 		
+		//bt.InOrderStackTraversal();
 		bt.findNode(new BinaryTreeNode(5));
 		
 		
