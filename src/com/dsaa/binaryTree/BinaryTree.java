@@ -3,11 +3,9 @@ package com.dsaa.binaryTree;
 import java.util.Stack;
 
 public class BinaryTree {
-	
-	
+		
 	BinaryTreeNode rootNode;
-	
-	
+		
 	//Finding data with pre-order traversal
 	public BinaryTreeNode findNodePreOrder(BinaryTreeNode valueToCompare, BinaryTreeNode valueToFind) {
 		
