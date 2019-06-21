@@ -9,10 +9,9 @@ public class LinkedList {
 	
 	int count = 0;
 	
-	public void assignFirstNode(Node firstNode) {
+	private void assignFirstNode(Node firstNode) {
 		head = firstNode;
 		tail = firstNode;
-		count++;
 	}
 	
 	public void addToFront(Node newFrontNode) {
