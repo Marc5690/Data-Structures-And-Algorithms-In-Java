@@ -12,6 +12,7 @@ public class LinkedList {
 	public void assignFirstNode(Node firstNode) {
 		head = firstNode;
 		tail = firstNode;
+		count++;
 	}
 	
 	public void addToFront(Node newFrontNode) {
